@@ -35,21 +35,7 @@ pokemonList = [{
 };
 })();
 
-console.log( pokemonRepository.getAll() );
-
-
 document.write("<h1>Pokemon List</h1>");
-// document.write("<ul>");
-//
-// for (let i = 0; i < pokemonList.length; i++) {
-//   document.write("<li>" + pokemonList[i].name + " (height:" + pokemonList[i].height + ") ");
-//   if (pokemonList[i].height > 1.5) {
-//     document.write(' - Wow, that\'s big!')
-//   };
-// }
-//
-// document.write("</ul>")
-
 document.write("<ul>");
 
 pokemonRepository.getAll().forEach( function(pokemon){
