@@ -1,5 +1,31 @@
 body {
-  font-family: arial, sans-serif;
-  background-color: rgba(0,0,0,0.8);
+  font-family: montserrat,arial, sans-serif;
+  font-size: 2rem;
+  background-color: #262626;
   color: #fff;
+}
+
+.pokemon-list {
+  margin: 100px auto;
+  max-width: 30%;
+  list-style-type: none;
+}
+
+.list-heading {
+  border: 1px solid gray;
+  background-color: lightgray;
+  color: #000;
+  text-align:center;
+}
+
+.pokedex-button {
+  font-family: montserrat,arial, sans-serif;
+  border: 1px solid gray;
+  background-color: lightgray;
+  color: #000;
+  text-decoration: underline;
+  height:50px;
+  width:100%;
+  font-size: 1.25rem;
+
 }
