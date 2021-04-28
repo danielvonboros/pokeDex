@@ -28,5 +28,34 @@ body {
   width:100%;
   font-size: 1.25rem;
   text-transform: capitalize;
+}
 
+#modal-container {
+  display:none;
+  background-color: lightgray;
+  width: 50%;
+  height: 40%;
+  min-height: 200px;
+  left: 25%;
+  top: 30%;
+  position: fixed;
+  color: #000;
+}
+
+#modal-container.is-visible {
+  display: block;
+  }
+
+.modal-close {
+  float: right;
+  border: 0;
+  background: none;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
 }

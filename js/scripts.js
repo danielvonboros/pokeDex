@@ -1,35 +1,7 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=898';
-
-  // I limited the number of pokemon to 898, because number 898 would be the last "regular"
-  //pokemon named "calyrex". numbers starting from 10001 seem to be variations of pokemon
-  //already in the list..
-
-  //Time to load the page quite high (probably because of the 898 objects)
-  //To improve loading performance, maybe limit the number of pokemon to 150.
-
-  pokemonList = [{
-      name: 'Pikachu',
-      type: 'electric',
-      height: 0.4,
-    },
-    {
-      name: 'Charizard',
-      type: ['fire', 'flying'],
-      height: 1.7,
-    },
-    {
-      name: 'Pidgeot',
-      type: ['flying', 'normal'],
-      height: 1.5,
-    },
-    {
-      name: 'Nidoking',
-      type: ['ground', 'poison'],
-      height: 1.4,
-    },
-  ];
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let modalContainer = document.querySelector('#modal-container');
 
   function add(pokemon) {
     if (
@@ -95,9 +67,63 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
+      showModal(pokemon);
       console.log(pokemon);
     });
   }
+
+  function showModal(pokemon) {
+    modalContainer.innerHTML = '';
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    let closeButtonElement = document.createElement('button');
+    closeButtonElement.classList.add('modal-close');
+    closeButtonElement.innerHTML = 'X';
+    closeButtonElement.addEventListener('click', hideModal());
+
+    let titleElement = document.createElement('h1');
+    titleElement.innerText = pokemon.name;
+
+    let pokemonPropertiesDiv = document.createElement('div');
+    let imageElement = document.createElement('img');
+    imageElement.src = pokemon.imageUrl;
+
+    let contentElement = document.createElement('p');
+    contentElement.innerText = pokemon.detailsUrl;
+
+    let contentElement2 = document.createElement('p');
+    contentElement2.innerText = 'height: ' + pokemon.height;
+
+    modalContainer.appendChild(modal);
+
+    modal.appendChild(closeButtonElement);
+    modal.appendChild(titleElement);
+    modal.appendChild(pokemonPropertiesDiv);
+
+    pokemonPropertiesDiv.appendChild(imageElement);
+    pokemonPropertiesDiv.appendChild(contentElement);
+    pokemonPropertiesDiv.appendChild(contentElement2);
+
+    modalContainer.classList.add('is-visible');
+  }
+
+  function hideModal() {
+    modalContainer.classList.remove('is-visible');
+  }
+
+  modalContainer.addEventListener('click', (e) => {
+    let target = e.target;
+    if (target === modalContainer) {
+      hideModal();
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+      hideModal();
+    }
+  });
 
   return {
     add: add,
