@@ -1,4 +1,4 @@
-<a href="https://danielvonboros.github.io/simple-js-app/">PokéDex</a>
+# <a href="https://danielvonboros.github.io/simple-js-app/">PokéDex</a>
 
 A simple, easy to use PokéDex using an external API built with JavaScript, CSS and HTML.
 
@@ -15,5 +15,5 @@ built using:
   <li>HTML</li>
 </ul>
 
-# Pokédex App
+Pokédex App
 <a href='https://pokeapi.co/'>PokeAPI</a>
