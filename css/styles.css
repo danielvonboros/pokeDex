@@ -16,9 +16,15 @@ p {
 
 /***** CLASS SELECTORS *****/
 
+/** NAVBAR **/
+.navbar {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
 /* POKEMON LIST */
 .pokemon-list {
-  margin: 30px auto;
+  margin: 100px auto;
   max-width: 80%;
   width: 80%;
   list-style-type: none;
@@ -57,58 +63,6 @@ p {
   justify-content: center;
 }
 
-/* MODAL */
-
-/* #modal-background {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  height: 100vh;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  opacity:0;
-  -webkit-transition: visibility 0s, opacity 0.5s;
-}
-
-#modal-background.is-visible {
-  display:block;
-  z-index: 1;
-} */
-
-.modal.is-visible {
-  display: block;
-}
-
-.modal-close {
-  float: right;
-  border: 0;
-  background: none;
-}
-
-.pokemon-modal-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/****** ID SELECTORS ******/
-
-#modal-container {
-  display:none;
-  background-color: lightgray;
-  width: 50%;
-  height: 40%;
-  min-height: 200px;
-  left: 25%;
-  top: 30%;
-  position: fixed;
-  color: #000;
-}
-
-#modal-container.is-visible {
-  display: block;
-  }
 
 /* MEDIA QUERIES */
 
