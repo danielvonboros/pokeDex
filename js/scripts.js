@@ -48,7 +48,6 @@ let pokemonRepository = (function () {
         };
         add(pokemon);
 
-        // console.log(pokemon);
       });
     }).catch(function (e) {
       console.error(e);
