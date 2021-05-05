@@ -1,2 +1,5 @@
-# simple-js-app
+# Pokédex App
+
 Pokédex App
+components:
+Bootstrap, jQuery
