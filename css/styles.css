@@ -28,12 +28,9 @@ p {
   max-width: 80%;
   width: 80%;
   list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .pokemon-list li {
-  flex: 1 0 40%;
   margin: 10px 0 0 10px;
 }
 
@@ -46,31 +43,9 @@ p {
 
 .pokedex-button {
   font-family: montserrat,arial, sans-serif;
-  /* border: 1px solid gray;
-  background-color: lightgray;
-  color: #000; */
   text-decoration: none;
   height:50px;
   width:100%;
   font-size: 1.25rem;
   text-transform: capitalize;
-}
-
-.pokemon-properties-div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* MEDIA QUERIES */
-
-@media all and (min-width:1200px) {
-  .pokemon-list {
-    width: 1200px;
-  }
-  .pokemon-list li {
-    flex: 1 0 16%;
-  }
 }
