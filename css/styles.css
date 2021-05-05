@@ -4,6 +4,7 @@ body {
   font-family: montserrat,arial, sans-serif;
   font-size: 1rem;
   background-color: #262626;
+  color: #fff;
 }
 
 h1 {
@@ -18,7 +19,13 @@ p {
 
 /** NAVBAR **/
 .navbar {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #000;
+  color: #fff;
+}
+
+/* MODAL */
+.modal-content {
+  background-color: #262626;
   color: #fff;
 }
 

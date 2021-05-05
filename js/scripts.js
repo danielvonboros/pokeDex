@@ -1,7 +1,6 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-  let modalContainer = document.querySelector('#modal-container');
 
   function add(pokemon) {
     if (
@@ -10,16 +9,14 @@ let pokemonRepository = (function () {
     ) {
       pokemonList.push(pokemon);
     } else {
+      /* eslint-disable no-console */
       console.log('Pokemon-Data is not correct, Pokemon could not be added.');
+      /* eslint-enable no-console */
     }
   }
 
   function getAll() {
     return pokemonList;
-  }
-
-  function showDetails(pokemon) {
-    // console.log(pokemon);
   }
 
   function addListItem(pokemon) {
@@ -32,10 +29,10 @@ let pokemonRepository = (function () {
     newListButton.classList.add('btn', 'btn-secondary', 'pokedex-button');
     newListItem.appendChild(newListButton);
     pokedexList.appendChild(newListItem);
-    newListButton.addEventListener('click', function (event) {
+    newListButton.addEventListener('click', function () {
       showDetails(pokemon);
     });
-  };
+  }
 
   function loadList() {
     return fetch(apiUrl).then(function (response) {
@@ -50,7 +47,9 @@ let pokemonRepository = (function () {
 
       });
     }).catch(function (e) {
+      /* eslint-disable no-console */
       console.error(e);
+      /* eslint-enable no-console */
     });
   }
 
@@ -63,7 +62,9 @@ let pokemonRepository = (function () {
       item.height = details.height;
       item.types = details.types;
     }).catch(function (e) {
+      /* eslint-disable no-console */
       console.error(e);
+      /* eslint-enable no-console */
     });
   }
 
@@ -71,7 +72,6 @@ let pokemonRepository = (function () {
     pokemonRepository.loadDetails(pokemon).then(function () {
       let modalBody = $('.modal-body');
       let modalTitle = $('.modal-title');
-      let modalHeader = $('.modal-header');
 
       modalTitle.empty();
       modalBody.empty();
@@ -111,7 +111,6 @@ let pokemonRepository = (function () {
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
-    showDetails: showDetails,
   };
 })();
 
