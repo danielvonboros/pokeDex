@@ -16,4 +16,5 @@ built using:
 </ul>
 
 Pokédex App
+
 <a href='https://pokeapi.co/'>PokeAPI</a>
