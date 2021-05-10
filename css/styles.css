@@ -15,6 +15,10 @@ p {
   font-size: 1rem;
 }
 
+ul {
+  list-style-type: none;
+}
+
 /***** CLASS SELECTORS *****/
 
 /** NAVBAR **/
@@ -27,6 +31,11 @@ p {
 .modal-content {
   background-color: #262626;
   color: #fff;
+  text-align: center;
+}
+
+.modal-img {
+  margin-bottom: 2rem;
 }
 
 /* POKEMON LIST */

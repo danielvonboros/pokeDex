@@ -1,6 +1,7 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  
 
   function add(pokemon) {
     if (
@@ -58,7 +59,7 @@ let pokemonRepository = (function () {
     return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
-      item.imageUrl = details.sprites.front_default;
+      item.imageUrl = details.sprites.other.dream_world.front_default;
       item.height = details.height;
       item.types = details.types;
     }).catch(function (e) {
@@ -87,6 +88,7 @@ let pokemonRepository = (function () {
       let heightElement = $('<p>' + 'height: ' + pokemon.height + '</p>');
 
       let typesElement = document.createElement('ul');
+      typesElement.classList.add('list-group');
       let types = 'Type: ';
       pokemon.types.forEach(function (item) {
         types += '<li>' + item.type.name + '</li>';
@@ -119,3 +121,24 @@ pokemonRepository.loadList().then(function () {
     pokemonRepository.addListItem(pokemon);
   });
 });
+
+
+// Search for pokemons
+
+    //eslint-disable-next-line no-unused-vars
+    function myFunction() {
+      let input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('searchBar');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById('list-group');
+      li = ul.getElementsByTagName('li');
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName('button')[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = '';
+        } else {
+          li[i].style.display = 'none';
+        }
+      }
+    }
