@@ -1,8 +1,11 @@
-# <a href="https://danielvonboros.github.io/simple-js-app/">PokéDex</a>
+https://github.com/danielvonboros/pokeDex/blob/main/css/styles.css
+![alt pokeDexLogo](https://github.com/danielvonboros/pokeDex/blob/main/assets/pokedexLogo.png?raw=true)
 
-A simple, easy to use PokéDex using an external API built with JavaScript, CSS and HTML.
+<hr>
+A simple, easy to use <a href="https://danielvonboros.github.io/pokeDex/">PokéDex</a> using an external API built with JavaScript, CSS and HTML.
 
 built using:
+
 <ul>
   <li>PokeAPI</li>
   <li>Bootstrap</li>
